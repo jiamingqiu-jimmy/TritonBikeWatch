@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TritonBikeWatch", "TritonBikeWatch\TritonBikeWatch.csproj", "{7D4DFF40-87D8-454E-957E-1C18825A20FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMauiApp", "TritonBikeWatch\BlazorMauiApp.csproj", "{7D4DFF40-87D8-454E-957E-1C18825A20FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServer", "BlazorServer\BlazorServer.csproj", "{64277172-AB1B-4B6A-8BD8-0DD928BBF642}"
 EndProject
