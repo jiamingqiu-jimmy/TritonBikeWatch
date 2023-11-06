@@ -7,11 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMauiApp", "BlazorMaui
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components", "Components\Components.csproj", "{90EA7230-609D-4EBE-8307-5A06236F8FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM.Server", "BlazorWASM\Server\BlazorWASM.Server.csproj", "{7F62D13F-3AB9-4A62-93F7-6C86E7577BB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM.Server", "BlazorWASM\Server\BlazorWASM.Server.csproj", "{7F62D13F-3AB9-4A62-93F7-6C86E7577BB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM.Client", "BlazorWASM\Client\BlazorWASM.Client.csproj", "{B25685D4-78AC-419A-9C81-74BE3CD15ECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM.Client", "BlazorWASM\Client\BlazorWASM.Client.csproj", "{B25685D4-78AC-419A-9C81-74BE3CD15ECB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWASM.Shared", "BlazorWASM\Shared\BlazorWASM.Shared.csproj", "{220BB65A-CF90-46FB-B30E-68048224BAFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM.Shared", "BlazorWASM\Shared\BlazorWASM.Shared.csproj", "{220BB65A-CF90-46FB-B30E-68048224BAFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{864CC9C1-BAF8-407A-8ECE-0606F72BD4F8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
