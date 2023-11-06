@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using BlazorWASM.Server.DB;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
 
@@ -11,6 +11,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAdB2C"));
+
+await DatabaseSetup.SetupDatabase(builder.Configuration);
 
 var app = builder.Build();
 
