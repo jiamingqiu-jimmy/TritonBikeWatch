@@ -20,7 +20,7 @@ builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().Cre
 builder.Services.AddMsalAuthentication(options =>
 {
     builder.Configuration.Bind("AzureAdB2C", options.ProviderOptions.Authentication);
-    options.ProviderOptions.DefaultAccessTokenScopes.Add("https://tritonbikewatch.onmicrosoft.com/66c176dc-eff7-4696-bbe0-84f5d0a058ff/API.Access");
+    options.ProviderOptions.DefaultAccessTokenScopes.Add("https://tritonbikewatch.onmicrosoft.com/98e22476-e200-4f18-a1eb-2a7956127da7/API.Access");
 });
 
 await builder.Build().RunAsync();

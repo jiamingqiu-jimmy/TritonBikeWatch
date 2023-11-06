@@ -3,7 +3,13 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @attribute [Authorize]
 @using BlazorWASM.Shared;
+@using System.Security.Claims;
+@using System;
+@using System.Collections.Generic;
+@using System.Text.Json;
 @inject HttpClient Http
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -38,13 +44,39 @@ else
             }
         </tbody>
     </table>
+
+    @if (user.Identity.IsAuthenticated)
+    {
+        <p>You are logged in.</p>
+        <p>Welcome, @string.Join(", ", user.Claims.Select(claim => $"{claim.Type}: {claim.Value}"))</p>
+        <p>Name: @user.FindFirst("name").Value</p>
+        <p>Name: @userEmail</p>
+
+        @* <p>Other Claims:</p>
+        <ul>
+            @foreach (var claim in user.Claims)
+            {
+                <li>@claim.Type: @claim.Value</li>
+            }
+        </ul> *@
+    }
+    else
+    {
+        <p>You are not logged in.</p>
+    }
 }
 
 @code {
+    private ClaimsPrincipal user;
     private WeatherForecast[]? forecasts;
+    private String userEmail;
 
     protected override async Task OnInitializedAsync()
     {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        user = authState.User;
+        userEmail = JsonSerializer.Deserialize<List<string>>(user.FindFirst("emails").Value).First();
+
         try
         {
             forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
