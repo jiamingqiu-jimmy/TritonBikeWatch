@@ -17,6 +17,8 @@
     4. [Workshop](#workshop)
 2. [Schematics](#schematics)
 3. [Resources](#resources)
+    1. [Software Resources](#software-resources)
+    2. [Hardware Resources](#hardware-resources)
 4. [Meet The Team](#meet-the-team)
     1. [Jia Ming (Jimmy) Qiu](#jia-ming-jimmy-qiu)
     2. [Alic Luna](#alic-luna)
@@ -53,6 +55,9 @@ Our third approach is a web application that will tie the two hardware solutions
 [Five favorite photos / schematics / drawings]
 
 ## Resources
+
+### Software Resources
+
 1. [Azure Cloud $100 Credit](https://azure.microsoft.com/en-us/free/students)
 2. [Github Students](https://education.github.com/students)
 3. [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui)
@@ -60,6 +65,7 @@ Our third approach is a web application that will tie the two hardware solutions
 5. [.NET Blazor WASM](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-7.0)
 6. [Azure Kubernetes Service](https://azure.microsoft.com/en-us/products/kubernetes-service)
 
+### Hardware Resources
 
 ## Meet The Team
 
