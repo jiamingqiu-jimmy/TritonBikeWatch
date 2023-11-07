@@ -14,6 +14,9 @@
 2. [Schematics](#schematics)
 3. [Resources](#resources)
 4. [Meet The Team](#meet-the-team)
+    1. [Jia Ming (Jimmy) Qiu](#jia-ming-jimmy-qiu)
+    2. [Alic Luna](#alic-luna)
+    3. [Nathan Chong](#nathan-chong)
 
 ## Project Description
 
@@ -28,15 +31,31 @@ Our third approach is a web application that will tie the two hardware solutions
 
 ### Video Demo
 
+[Youtube Embed Link]
 
 ### Slide Deck
+
+[Slide Deck Link]
 
 ### Workshop 
 
 ## Schematics
 
+[Five favorite photos / schematics / drawings]
 
 ## Resources
+1. [Azure Cloud $100 Credit](https://azure.microsoft.com/en-us/free/students)
+2. [Github Students](https://education.github.com/students)
+3. [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui)
+4. [.NET Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/?view=aspnetcore-7.0)
+5. [.NET Blazor WASM](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-7.0)
+6. [Azure Kubernetes Service](https://azure.microsoft.com/en-us/products/kubernetes-service)
 
 
 ## Meet The Team
+
+### Jia Ming (Jimmy) Qiu
+
+### Alic Luna
+
+### Nathan Chong
