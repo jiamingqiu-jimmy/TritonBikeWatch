@@ -8,10 +8,10 @@
 
 1. [Project Description](#project-description)
     1. [Introduction](#introduction)
-      1. [High-level Approach](#high-level-approach)
-      2. [First Hardware Solution - Bicycle Device PCB](#first-hardware-solution---bicycle-device-pcb)
-      3. [Second Hardware Solution - Security Camera PCB](#second-hardware-solution---security-camera-pcb)
-      4. [Software Solution - Web & Mobile Application](#software-solution---web--mobile-application)
+        1. [High-level Approach](#high-level-approach)
+        2. [First Hardware Solution - Bicycle Device PCB](#first-hardware-solution---bicycle-device-pcb)
+        3. [Second Hardware Solution - Security Camera PCB](#second-hardware-solution---security-camera-pcb)
+        4. [Software Solution - Web & Mobile Application](#software-solution---web--mobile-application)
     2. [Video Demo](#video-demo)
     3. [Slide Deck](#slide-deck)
     4. [Workshop](#workshop)
@@ -27,7 +27,7 @@
 ### Introduction
 
 #### High-level Approach
-Our solution to mitigate campus bicycle theft is a three-prong approach involving two hardware solutions and one software solution combined together into one system. Our goal for our system is to improve awareness and response time to ongoing bicycle theft and give users the tools to prevent their bicycle being stolen under their nose.
+Our solution to mitigate campus bicycle theft is a three-prong approach involving two hardware solutions and one software solution combined together into one system. Our goal for our system is to improve awareness and response time to ongoing bicycle theft and give students an ease of mind and a feeling of security when parking their bicycles on campus.
 
 #### First Hardware Solution - Bicycle Device PCB
 Our first hardware solution is a PCB that can be attached to a bicycle that will alert the owner on their web/mobile devices if there are any recognized sounds of a bicycle lock being cut, and also will alert the owner if there is detection of motion of the bicycle when the owner has specified they are in class. 
