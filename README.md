@@ -2,7 +2,7 @@
 ### UCSD ECE 196 FALL 2023  
 #### Created by Team 1: `TritonBikeWatch` - Jia Ming (Jimmy) Qiu, Alic Luna, Nathan Chong
 
-< Insert ECE Dept. Logo here >
+[UCSD ECE Logo](./Assets/ECE_Logo.png)
 
 
 ## Table of Contents
