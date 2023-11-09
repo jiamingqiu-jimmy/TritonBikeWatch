@@ -6,7 +6,10 @@ namespace BlazorWASM.Server.DB
     public static class DatabaseSetup
     {
         private static readonly string databaseId = "Core";
-        private static readonly string usersContainer = "Users";
+        private static readonly string users = "Users";
+        private static readonly string locations = "Locations";
+        private static readonly string devices = "Devices";
+        private static readonly string alerts = "Alerts";
 
         public static async Task SetupDatabase(IConfiguration _configuration)
         {
@@ -22,8 +25,17 @@ namespace BlazorWASM.Server.DB
                 Database database = await cosmosClient.CreateDatabaseIfNotExistsAsync(databaseId);
                 Console.WriteLine("Created Database: {0}\n", databaseId);
                 // Create a new container
-                Container container = await database.CreateContainerIfNotExistsAsync(usersContainer, "/partitionKey");
-                Console.WriteLine("Created Container: {0}\n", container.Id);
+                Container usersContainer = await database.CreateContainerIfNotExistsAsync(users, "/id");
+                Console.WriteLine("Created Container: {0}\n", usersContainer.Id);
+
+                Container locationsContainer = await database.CreateContainerIfNotExistsAsync(locations, "/id");
+                Console.WriteLine("Created Container: {0}\n", locationsContainer.Id);
+
+                Container devicesContainer = await database.CreateContainerIfNotExistsAsync(devices, "/id");
+                Console.WriteLine("Created Container: {0}\n", devicesContainer.Id);
+
+                Container alertsContainer = await database.CreateContainerIfNotExistsAsync(alerts, "/id");
+                Console.WriteLine("Created Container: {0}\n", alertsContainer.Id);
             }
             catch (CosmosException de)
             {
