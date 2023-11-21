@@ -22,7 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{BFB89D86-3D50-492C-8671-FD8888311A4F}"
 	ProjectSection(SolutionItems) = preProject
+		Assets\Alic.jpg = Assets\Alic.jpg
 		Assets\ECE_Logo.png = Assets\ECE_Logo.png
+		Assets\GroupPhoto.jpg = Assets\GroupPhoto.jpg
+		Assets\Jimmy.jpg = Assets\Jimmy.jpg
+		Assets\Nathan.jpg = Assets\Nathan.jpg
 	EndProjectSection
 EndProject
 Global

@@ -67,11 +67,29 @@ Our third approach is a web application that will tie the two hardware solutions
 
 ### Hardware Resources
 
+1. [Circuit IO](https://www.circuito.io/)
+1. [Arduino](https://www.arduino.cc/)
+1. [Edge Impulse](https://edgeimpulse.com/)
+1. [ESP32-CAM](https://github.com/yoursunny/esp32cam)
+
 ## Meet The Team
-![GroupPhoto]()
+
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/GroupPhoto.jpg?raw=true" width=50% height=50%>
 
 ### Jia Ming (Jimmy) Qiu
 
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/Jimmy.jpg?raw=true" width=50% height=50%>
+
+Hello! My name is Jimmy an I'm a second year Machine Learning Data Science Masters student at UCSD and I'm also a a full time Software Engineer at Verint Systems. I'm passionate about software and software systems, and I'm excited to have been working on this project integrating hardware and software with this team. I want to explore as much as I can about all the different connections software has with other disciplines and eventually become an expert in the software field!
+
 ### Alic Luna
 
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/Alic.jpg?raw=true" width=50% height=50%>
+
+Greetings, I am Alic Luna, a senior majoring in electrical engineering with a specialized focus on Power Systems. Upon completion of my academic pursuits, my aspiration is to contribute to the field by engaging in substation design or specializing in protection and controls for power grid systems. In my leisure, I enjoy exploring diverse culinary experiences, watching films, and appreciating craft beers. The objective of my current project is to gain proficiency in embedded systems and computer vision. Specifically, I aim to develop an object-detecting security camera designed to deter and prevent instances of bike theft.
+
 ### Nathan Chong
+
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/Nathan.jpg?raw=true" width=50% height=50%>
+
+Hello, I'm Nathan Chong, a senior at UCSD Marshall College majoring in electrical engineering. Beyond the world of circuits and equations, I find joy in playing volleyball, experimenting with new recipes in the kitchen, and immersing myself in the thrilling realms of gaming. A vanilla cold brew is my go-to beverage for those moments of peak awareness. As I embark on this project, my goal is to engineer a bike device capable of detecting sudden movements and sounds, blending my passion for technology with a commitment to safety and innovation.
