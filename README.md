@@ -68,6 +68,7 @@ Our third approach is a web application that will tie the two hardware solutions
 ### Hardware Resources
 
 ## Meet The Team
+![GroupPhoto]()
 
 ### Jia Ming (Jimmy) Qiu
 
