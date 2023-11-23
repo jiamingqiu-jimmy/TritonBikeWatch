@@ -1,5 +1,4 @@
-﻿using BlazorWASM.Server.DB.Locations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BlazorWASM.Server.DB.Alerts
 {

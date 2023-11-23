@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BlazorWASM.Server.DB.Alerts;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlazorWASM.Server.DB.Users
 {
