@@ -9,6 +9,6 @@ namespace BlazorWASM.Server.DB.Users
         public string Email { get; set; }
         public int Permissions { get; set; }
         public Location Location { get; internal set; }
-        public Alert Alerts { get; internal set; }
+        public List<Alert> Alerts { get; internal set; }
     }
 }
