@@ -1,12 +1,16 @@
-﻿using BlazorWASM.Server.DB.Alerts;
-using BlazorWASM.Server.DB.Devices;
-using BlazorWASM.Server.DB.Users;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
-namespace BlazorWASM.Server.DB.Locations
+namespace BlazorWASM.Shared
 {
     public class Location
     {
-        public int Id { get; set; }
+        [Key]
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+
+        [JsonProperty(PropertyName = "_partitionKey")]
+        public string PartitionKey { get; set; }
         public string LocationName { get; set; }
         public string LocationDescription { get; set; }
         public List<Alert> Alerts { get; internal set; }

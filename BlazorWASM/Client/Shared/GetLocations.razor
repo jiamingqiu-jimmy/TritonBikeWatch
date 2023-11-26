@@ -1,0 +1,43 @@
+﻿@using BlazorWASM.Shared
+@inject HttpClient Http
+<h3>GetLocations Here</h3>
+
+@if (locations == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Location Description</th>
+                <th>Users</th>
+                <th>Alerts</th>
+                <th>Devices</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var location in locations)
+            {
+                <tr>
+                    <td>@location.LocationName</td>
+                    <td>@location.LocationDescription</td>
+                    <td>@location.Users</td>
+                    <td>@location.Alerts</td>
+                    <td>@location.Devices</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Location[]? locations;
+
+    protected override async Task OnInitializedAsync()
+    {
+      locations = await Http.GetFromJsonAsync<Location[]>("GetLocations");
+    }
+}
