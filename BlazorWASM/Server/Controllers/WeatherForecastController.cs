@@ -1,9 +1,7 @@
 using BlazorWASM.Shared;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Web.Resource;
-using Microsoft.IdentityModel.Logging;
 
 namespace BlazorWASM.Server.Controllers
 {

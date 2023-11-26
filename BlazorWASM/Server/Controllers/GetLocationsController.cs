@@ -1,12 +1,16 @@
 ﻿using BlazorWASM.Server.DB;
 using BlazorWASM.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 using System.Diagnostics;
 
 namespace BlazorWASM.Server.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
+    [RequiredScope(RequiredScopesConfigurationKey = "AzureAdB2C:Scopes")]
     public class GetLocationsController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
@@ -17,10 +21,10 @@ namespace BlazorWASM.Server.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IEnumerable<Location> Get()
         {
             Debug.WriteLine(_appDbContext.Locations.ToList());
-            return Ok(_appDbContext.Locations.ToList());
+            return _appDbContext.Locations.ToList();
         }
 
         [HttpPost]

@@ -5,14 +5,24 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
-        <MudText Typo="Typo.h5" Class="ml-3">TritonBikeWatch</MudText>
+    <MudAppBar Elevation="1" Color="Color.Transparent" Fixed="false">
+        <MudButton Href="/">
+            <MudImage Height="40" Width="40" Src="tritonSpinGeisel.png" Alt="tritonSpinBike" />
+            <MudText Typo="Typo.h5">TritonBikeWatch</MudText>
+        </MudButton>
         <MudSpacer />
-        <NavMenu />
+        <MudButton Href="/" Match="NavLinkMatch.All">Dashboard</MudButton>
+        <MudButton Href="counter">Counter</MudButton>
+        <MudButton Href="fetchData">FetchData</MudButton>
+        <MudButton Href="/adminPanel">Admin Panel</MudButton>
+        <MudSpacer />
         <LoginDisplay />
-        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+        <MudSpacer/>
+        <MudIconButton Href="https://github.com/jiamingqiu-jimmy/TritonBikeWatch" Icon="@Icons.Custom.Brands.GitHub" aria-label="github" Color="Color.Primary"></MudIconButton>
     </MudAppBar>
-    <MudMainContent>
-        @Body
+    <MudMainContent Class="pt-12">
+        <MudContainer>
+            @Body
+        </MudContainer>
     </MudMainContent>
 </MudLayout>
