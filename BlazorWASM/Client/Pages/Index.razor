@@ -1,14 +1,17 @@
 ﻿@page "/"
 
 <PageTitle>Index</PageTitle>
-<MudStack>
+<MudPaper Class="pa-8">
     <MudContainer Class="mb-8">
         <MudText Typo="Typo.h3">Campus Transportation Anti-Theft System</MudText>
-        <MudText Typo="Typo.body1">An introduction to a mutli-prong system approach to theft prevention</MudText>
+        <MudText Typo="Typo.body1">An introduction to a multi-prong system approach to theft prevention</MudText>
     </MudContainer>
     <MudContainer>
-      <MudText Typo="Typo.h5">Current Users:</MudText>
+
+        <MudButton Href="/dashboard" Color="Color.Primary">
+            Go to dashboard&nbsp;&nbsp;
+            <MudIcon Icon="@Icons.Material.Filled.East">
+            </MudIcon>
+        </MudButton>
     </MudContainer>
-</MudStack>
-
-
+</MudPaper>

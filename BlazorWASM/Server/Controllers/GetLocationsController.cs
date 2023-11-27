@@ -3,7 +3,6 @@ using BlazorWASM.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Web.Resource;
-using System.Diagnostics;
 
 namespace BlazorWASM.Server.Controllers
 {
@@ -23,7 +22,6 @@ namespace BlazorWASM.Server.Controllers
         [HttpGet]
         public IEnumerable<Location> Get()
         {
-            Debug.WriteLine(_appDbContext.Locations.ToList());
             return _appDbContext.Locations.ToList();
         }
 
@@ -32,11 +30,10 @@ namespace BlazorWASM.Server.Controllers
         {
             Location testLocation = new Location()
             {
-                Id = "1",
-                LocationName = "TestLocation!",
-                LocationDescription = "This is a test location.",
+                Id = Guid.NewGuid().ToString(),
+                LocationName = location.LocationName,
+                LocationDescription = location.LocationDescription,
             };
-            testLocation.PartitionKey = testLocation.Id;
 
             await _appDbContext.Locations.AddAsync(testLocation);
             await _appDbContext.SaveChangesAsync();

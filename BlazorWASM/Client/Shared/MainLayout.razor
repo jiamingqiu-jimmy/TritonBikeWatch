@@ -11,16 +11,16 @@
             <MudText Typo="Typo.h5">TritonBikeWatch</MudText>
         </MudButton>
         <MudSpacer />
-        <MudButton Href="/" Match="NavLinkMatch.All">Dashboard</MudButton>
-        <MudButton Href="counter">Counter</MudButton>
-        <MudButton Href="fetchData">FetchData</MudButton>
+        <MudButton Href="/dashboard">Dashboard</MudButton>
         <MudButton Href="/adminPanel">Admin Panel</MudButton>
         <MudSpacer />
         <LoginDisplay />
-        <MudSpacer/>
-        <MudIconButton Href="https://github.com/jiamingqiu-jimmy/TritonBikeWatch" Icon="@Icons.Custom.Brands.GitHub" aria-label="github" Color="Color.Primary"></MudIconButton>
+        <MudSpacer />
+        <MudTooltip Text="GitHub Repository">
+            <MudIconButton Href="https://github.com/jiamingqiu-jimmy/TritonBikeWatch" Icon="@Icons.Custom.Brands.GitHub" aria-label="github" Color="Color.Primary"></MudIconButton>
+        </MudTooltip>
     </MudAppBar>
-    <MudMainContent Class="pt-12">
+    <MudMainContent Class="pt-12 pb-12">
         <MudContainer>
             @Body
         </MudContainer>

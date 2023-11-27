@@ -1,22 +1,16 @@
-﻿@page "/adminPanel"
+﻿@page "/dashboard"
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @attribute [Authorize]
-@using BlazorWASM.Shared;
-@using System.Security.Claims;
-@using System;
-@using System.Collections.Generic;
-@using System.Text.Json;
-@using System.Text.RegularExpressions
-@using System.ComponentModel.DataAnnotations
+@using BlazorWASM.Shared
 @inject HttpClient Http
-@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IDialogService DialogService
 
-<MudText Typo="Typo.h2"> Admin Panel </MudText>
-<MudText Typo="Typo.subtitle1"> For all your admin needs! </MudText>
-
-<MudPaper>
-
+<MudText Typo="Typo.h2"> Dashboard </MudText>
+<br>
+<MudPaper Class="pt-4">
+    <MudText Class="pl-4" Typo="Typo.subtitle1"> Current Location: @currentLocation</MudText>
+    <br />
     <MudTable Items="@Locations" Hover="true" Breakpoint="Breakpoint.Sm" Loading="@_loading" LoadingProgressColor="Color.Info">
         <HeaderContent>
             <MudTh>Name</MudTh>
@@ -24,6 +18,7 @@
             <MudTh>Users</MudTh>
             <MudTh>Devices</MudTh>
             <MudTh>Alerts</MudTh>
+            <MudTh></MudTh>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Name">@context.LocationName</MudTd>
@@ -31,6 +26,9 @@
             <MudTd DataLabel="Users">@context.Users</MudTd>
             <MudTd DataLabel="Devices">@context.Devices</MudTd>
             <MudTd DataLabel="Alerts">@context.Alerts</MudTd>
+            <MudTd>
+                    <MudButton @onclick="() => SelectLocation(context)" Variant="Variant.Filled" Color="Color.Primary" Disabled="@selectedLocations.ContainsKey(context.Id)">Select</MudButton>
+            </MudTd>
         </RowTemplate>
     </MudTable>
     <br />
@@ -38,13 +36,12 @@
     <MudGrid Justify="Justify.Center">
         <MudItem xs="12" sm="7">
             <MudPaper Class="pa-4">
-            <MudText Typo="Typo.h5"> Add a new location </MudText>
+                <MudText Typo="Typo.h5"> Send an Alert to Users at: @currentLocation </MudText>
                 <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
-                    <MudTextField @bind-Value="@newLocation.LocationName" T="string" Label="Location Name" Required="true" RequiredError="Location name is required!" />
-                    <MudTextField @bind-Value="@newLocation.LocationDescription" T="string" Label="Location Description"/>
+                    <MudTextField T="string" Label="Alert Description!" />
                     <br />
                     <div class="d-flex align-center justify-space-between">
-                        <MudButton OnClick="(() => AddLocation())" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success)" Class="ml-auto">Register</MudButton>
+                         <MudButton @onclick="OpenDialog" Variant="Variant.Filled" Color="Color.Error" Disabled="@(currentLocation == "Not Selected")" Class="ml-auto">Alert!</MudButton>
                     </div>
                 </MudForm>
             </MudPaper>
@@ -52,11 +49,12 @@
     </MudGrid>
 </MudPaper>
 
-    @code {
+@code {
     private List<Location> Locations = new List<Location>();
+    private Dictionary<string, bool> selectedLocations = new Dictionary<string, bool>();
     private bool _loading = true;
-
-    Location newLocation = new Location();
+    private string currentLocation = "Not Selected";
+    
     bool success;
     string[] errors = { };
     MudForm form;
@@ -67,15 +65,16 @@
         _loading = false;
     }
 
-    private async Task AddLocation()
+    private void SelectLocation(Location location)
     {
-        await form.Validate();
-        if (form.IsValid)
-        {
-            var result = await Http.PostAsJsonAsync<Location>("GetLocations", newLocation);
-            Locations.Add(newLocation);
-            newLocation = new Location();
-            StateHasChanged();
-        }
+        currentLocation = location.LocationName;
+        selectedLocations = new Dictionary<string, bool>();
+        selectedLocations[location.Id] = true;
+    }
+
+    private void OpenDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<Alert>("Alert Dialog", options);
     }
 }
