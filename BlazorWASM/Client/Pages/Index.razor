@@ -1,4 +1,7 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
 
 <PageTitle>Index</PageTitle>
 <MudPaper Class="pa-8">
@@ -7,11 +10,86 @@
         <MudText Typo="Typo.body1">An introduction to a multi-prong system approach to theft prevention</MudText>
     </MudContainer>
     <MudContainer>
-
-        <MudButton Href="/dashboard" Color="Color.Primary">
+        <MudButton Variant="Variant.Filled" Href="/dashboard" Color="Color.Primary">
             Go to dashboard&nbsp;&nbsp;
             <MudIcon Icon="@Icons.Material.Filled.East">
             </MudIcon>
         </MudButton>
     </MudContainer>
+
 </MudPaper>
+
+<br />
+<br />
+<MudPaper>
+    <MudContainer Class="pa-8">
+        <MudText Typo="Typo.h5"> Recent Event Logs </MudText>
+        <MudList>
+            @foreach (var message in messages)
+            {
+            <MudListItem Text="@message" />
+            }
+        </MudList>
+        <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+            <MudGrid>
+                <MudItem xs="12" md="3">
+                    <MudTextField @bind-Value="@userInput" T="string" Label="Name" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="@messageInput" T="string" Label="Message" />
+                </MudItem>
+                <MudItem Class="d-flex align-end" xs="12" md="3">
+                    <MudButton OnClick="() => Send()" Variant="Variant.Filled" Color="Color.Secondary" Disabled="@(!success || !IsConnected)">Send</MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudForm>
+    </MudContainer>
+</MudPaper>
+
+@code {
+    private bool _loading = true;
+    bool success;
+    string[] errors = { };
+    MudForm form;
+
+    private HubConnection? hubConnection;
+    private List<string> messages = new List<string>();
+    private string? userInput;
+    private string? messageInput;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            var encodedMsg = $"{user}: {message}";
+            messages.Add(encodedMsg);
+            InvokeAsync(StateHasChanged);
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    private async Task Send()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+            messageInput = "";
+        }
+    }
+
+    public bool IsConnected =>
+        hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}

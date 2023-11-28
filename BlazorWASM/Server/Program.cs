@@ -1,8 +1,10 @@
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using BlazorWASM.Server.DB;
+using BlazorWASM.Server.Hubs;
 using BlazorWASM.Server.Initialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
@@ -26,6 +28,7 @@ cosmosPrimaryKey = secret.Value;
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
 
 builder.Services.AddDependencies();
 
@@ -69,6 +72,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapHub<ChatHub>("/chatHub");
+app.MapHub<AlertHub>("/alertHub");
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
