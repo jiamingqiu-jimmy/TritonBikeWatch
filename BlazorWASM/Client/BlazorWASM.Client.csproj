@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MudBlazor" Version="6.11.0" />
+    <PackageReference Include="MudBlazor" Version="6.11.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.Authentication.WebAssembly.Msal" Version="8.0.0" />
