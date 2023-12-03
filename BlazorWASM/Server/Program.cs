@@ -4,7 +4,6 @@ using BlazorWASM.Server.DB;
 using BlazorWASM.Server.Hubs;
 using BlazorWASM.Server.Initialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
@@ -13,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 string cosmosPrimaryKey;
 
-var keyVaultName = "TBW-KV";
+var keyVaultName = "tbw";
 var kvUri = $"https://{keyVaultName}.vault.azure.net";
 
 var secretClient = new SecretClient(new Uri(kvUri), new DefaultAzureCredential());

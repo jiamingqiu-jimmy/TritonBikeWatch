@@ -16,8 +16,8 @@
       "applicationUrl": "http://localhost:5058",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "VaultUri": "https://tbw-kv.vault.azure.net/",
-        "AZURE_USERNAME": "jiamingqiu951@gmail.com"
+        "VaultUri": "https://tbw.vault.azure.net/",
+        "AZURE_USERNAME": "jmqiu@UCSD.EDU"
       }
     },
     "https": {
@@ -28,8 +28,8 @@
       "applicationUrl": "https://localhost:7139;http://localhost:5058",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "VaultUri": "https://tbw-kv.vault.azure.net/",
-        "AZURE_USERNAME": "jiamingqiu951@gmail.com"
+        "VaultUri": "https://tbw.vault.azure.net/",
+        "AZURE_USERNAME": "jmqiu@UCSD.EDU"
       }
     },
     "https-prod": {
@@ -39,8 +39,8 @@
       "applicationUrl": "https://localhost:7139;http://localhost:5058",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production",
-        "VaultUri": "https://tbw-kv.vault.azure.net/",
-        "AZURE_USERNAME": "jiamingqiu951@gmail.com"
+        "VaultUri": "https://tbw.vault.azure.net/",
+        "AZURE_USERNAME": "jmqiu@UCSD.EDU"
       }
     },
     "IIS Express": {
@@ -49,8 +49,8 @@
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "VaultUri": "https://tbw-kv.vault.azure.net/",
-        "AZURE_USERNAME": "jiamingqiu951@gmail.com"
+        "VaultUri": "https://tbw.vault.azure.net/",
+        "AZURE_USERNAME": "jmqiu@UCSD.EDU"
       }
     }
   }
