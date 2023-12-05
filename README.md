@@ -14,7 +14,7 @@
         4. [Software Solution - Web & Mobile Application](#software-solution---web--mobile-application)
     2. [Video Demo](#video-demo)
     3. [Slide Deck](#slide-deck)
-    4. [Workshop](#workshop)
+    4. [Tutorial Link](#tutorial-link)
 2. [Schematics](#schematics)
 3. [Resources](#resources)
     1. [Software Resources](#software-resources)
@@ -52,9 +52,28 @@ Our third approach is a web application that will tie the two hardware solutions
 
 [Tutorial Google Docs Link](https://docs.google.com/document/d/1eIxykKeZzMzo6rNRDwa9eUPzwEGaHyKE7Q5rheZnAVY/edit?usp=sharing)
 
+### Website Links
+
+[Main Application](https://ucsdtritonbikewatch.azurewebsites.net/)
+[Bike Device Alert Link](https://ucsdtritonbikewatch.azurewebsites.net/DeviceAlert?DeviceName=BikeDevice)
+[Camera Device Alert Link](https://ucsdtritonbikewatch.azurewebsites.net/DeviceAlert?DeviceName=CameraDevice)
+
 ## Schematics
 
-[Five favorite photos / schematics / drawings]
+Website View
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/WebsiteView.png?raw=true" width=100% height=100%>
+
+Web Application Architecture
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/AppArchitecture.png?raw=true" width=100% height=100%>
+
+Azure Deployment
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/AzureDeployment.png?raw=true" width=100% height=100%>
+
+Camera Device
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/CameraDevice.png?raw=true" width=30% height=30%>
+
+Bike Device
+<img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/BikeDevice.png?raw=true" width=30% height=30%>
 
 ## Resources
 
