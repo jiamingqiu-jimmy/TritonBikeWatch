@@ -60,19 +60,19 @@ Our third approach is a web application that will tie the two hardware solutions
 
 ## Schematics
 
-Website View
+Website View \
 <img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/WebsiteView.png?raw=true" width=100% height=100%>
 
-Web Application Architecture
+Web Application Architecture \
 <img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/AppArchitecture.png?raw=true" width=100% height=100%>
 
-Azure Deployment
+Azure Deployment \
 <img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/AzureDeployment.png?raw=true" width=100% height=100%>
 
-Camera Device
+Camera Device \
 <img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/CameraDevice.png?raw=true" width=30% height=30%>
 
-Bike Device
+Bike Device \
 <img src="https://github.com/jiamingqiu-jimmy/TritonBikeWatch/blob/main/Assets/BikeDevice.png?raw=true" width=30% height=30%>
 
 ## Resources
