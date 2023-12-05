@@ -46,9 +46,11 @@ Our third approach is a web application that will tie the two hardware solutions
 
 ### Slide Deck
 
-[Slide Deck Link]
+[Google Slides Link](https://docs.google.com/presentation/d/1Svcvlm2VV6MllKzdXzbsiNCcoLggKlQp_iDzHF-oDoM/edit?usp=sharing)
 
-### Workshop 
+### Tutorial Link 
+
+[Tutorial Google Docs Link](https://docs.google.com/document/d/1eIxykKeZzMzo6rNRDwa9eUPzwEGaHyKE7Q5rheZnAVY/edit?usp=sharing)
 
 ## Schematics
 
