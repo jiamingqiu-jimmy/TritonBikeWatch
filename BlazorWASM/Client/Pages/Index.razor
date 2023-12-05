@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager Navigation
+@inject IDialogService DialogService
 @implements IAsyncDisposable
 
 <PageTitle>TritonBikeWatch</PageTitle>
@@ -49,6 +50,7 @@
 @code {
     private bool _loading = true;
     bool success;
+    bool alertModal = false;
     string[] errors = { };
     MudForm form;
 
@@ -63,10 +65,15 @@
             .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
             .Build();
 
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<string, string, bool>("ReceiveMessage", (user, message, alert) =>
         {
             var encodedMsg = $"{user}: {message}";
-            messages.Add(encodedMsg);
+            messages.Add(encodedMsg);                                                        
+            if (alertModal == false && alert == true)
+            {
+                OpenDialog();
+                alertModal = true;
+            }
             InvokeAsync(StateHasChanged);
         });
 
@@ -77,7 +84,7 @@
     {
         if (hubConnection is not null)
         {
-            await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput, false);
             messageInput = "";
         }
     }
@@ -91,5 +98,14 @@
         {
             await hubConnection.DisposeAsync();
         }
+    }
+
+    private async Task OpenDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        var dialog = DialogService.Show<ReceiveAlert>("You have received an alert!", options);
+
+        await dialog.Result;
+        alertModal = false;
     }
 }
