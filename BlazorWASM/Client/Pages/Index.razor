@@ -40,7 +40,9 @@
                     <MudTextField @bind-Value="@messageInput" T="string" Label="Message" />
                 </MudItem>
                 <MudItem Class="d-flex align-end" xs="12" md="3">
-                    <MudButton OnClick="() => Send()" Variant="Variant.Filled" Color="Color.Secondary" Disabled="@(!success || !IsConnected)">Send</MudButton>
+                    <MudButton OnClick="() => Send()" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!success || !IsConnected)">Send</MudButton>
+                    &nbsp;&nbsp;
+                    <MudButton OnClick="() => Alert()" Variant="Variant.Filled" Color="Color.Error" Disabled="@(!success || !IsConnected)">Alert</MudButton>
                 </MudItem>
             </MudGrid>
         </MudForm>
@@ -68,7 +70,12 @@
         hubConnection.On<string, string, bool>("ReceiveMessage", (user, message, alert) =>
         {
             var encodedMsg = $"{user}: {message}";
-            messages.Add(encodedMsg);                                                        
+            messages.Add(encodedMsg);
+            if (messages.Count > 15)
+            {
+                // Remove the oldest item
+                messages.RemoveAt(0);
+            }
             if (alertModal == false && alert == true)
             {
                 OpenDialog();
@@ -85,6 +92,15 @@
         if (hubConnection is not null)
         {
             await hubConnection.SendAsync("SendMessage", userInput, messageInput, false);
+            messageInput = "";
+        }
+    }
+
+    private async Task Alert()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput, true);
             messageInput = "";
         }
     }

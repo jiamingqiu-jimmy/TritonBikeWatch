@@ -42,7 +42,7 @@ Our third approach is a web application that will tie the two hardware solutions
 
 ### Video Demo
 
-[Youtube Embed Link]
+[Youtube Video Link](https://youtu.be/nY61pv2XBhU)
 
 ### Slide Deck
 
